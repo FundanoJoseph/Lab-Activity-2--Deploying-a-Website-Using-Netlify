@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PyWorkshop · Learn Python</title>
+  <meta name="description" content="A beginner Python tutorial with an embedded online compiler. HTML frontend, Python backend, deployed on Netlify.">
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/mark.svg" alt="">
+        PyWorkshop
+      </a>
+      <button class="menu-btn" id="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html" aria-current="page">Home</a></li>
+        <li><a href="learn.html">Tutorial</a></li>
+        <li><a href="playground.html">Compiler</a></li>
+        <li><a href="deploy.html">Netlify Lab</a></li>
+        <li><a class="nav-cta" href="playground.html">Run Python</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="main" class="wrap">
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Lab Activity 2 · Joseph Fundano</p>
+        <h1>Learn Python in one sitting.</h1>
+        <p class="lede">A beginner tutorial with copy-ready examples and a real online compiler in the page. The site is HTML on the front, Python (Flask) on the back, and ready to publish on Netlify.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="learn.html">Start the tutorial</a>
+          <a class="btn btn-amber" href="playground.html">Open the compiler</a>
+        </div>
+        <p class="backend-pill" id="backend-status">Checking Python backend…</p>
+      </div>
+      <aside class="hero-card" aria-label="Sample Python program">
+        <div class="terminal-bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
+        <pre><span class="cm"># first program</span>
+<span class="kw">def</span> <span class="fn">greet</span>(name):
+    <span class="kw">return</span> <span class="st">f"Hello, {name}!"</span>
+
+<span class="fn">print</span>(greet(<span class="st">"World"</span>))
+<span class="fn">print</span>(<span class="st">"Let's learn Python."</span>)</pre>
+      </aside>
+    </section>
+
+    <section class="stats">
+      <div class="stat"><b>8 lessons</b>From print() to functions</div>
+      <div class="stat"><b>1 compiler</b>Embedded OneCompiler</div>
+      <div class="stat"><b>Netlify</b>Static deploy, no build step</div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <div>
+          <h2>What you will do</h2>
+          <p class="muted">Follow the lessons, paste a snippet into the compiler, then deploy the site.</p>
+        </div>
+      </div>
+      <div class="cards">
+        <article class="card">
+          <p class="num">01</p>
+          <h3>Read the tutorial</h3>
+          <p>Short Python lessons written for first-timers: variables, decisions, loops, lists, and functions.</p>
+        </article>
+        <article class="card">
+          <p class="num">02</p>
+          <h3>Run code in the browser</h3>
+          <p>The playground embeds an online Python compiler. Copy a snippet, paste it, press Run.</p>
+        </article>
+        <article class="card">
+          <p class="num">03</p>
+          <h3>Publish on Netlify</h3>
+          <p>Push this repo to GitHub, click Add a new project, and Netlify gives you a live URL.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section split">
+      <div class="panel">
+        <h2>How the site is built</h2>
+        <p>The pages you are reading are plain HTML, CSS, and JavaScript. That is what Netlify publishes.</p>
+        <p>When you run the project locally, a Flask app in <code>backend/app.py</code> serves those files and grades the quiz. That is the Python backend.</p>
+        <a class="btn btn-ghost" href="deploy.html">See the deploy steps</a>
+      </div>
+      <div class="panel night-panel">
+        <h2>Local Python backend</h2>
+        <pre class="code" id="local-run">python -m pip install -r requirements.txt
+python backend/app.py
+# then open http://localhost:5000</pre>
+        <button class="copy" data-copy="#local-run">Copy</button>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>PyWorkshop · HTML frontend · Python backend · Netlify deploy</span>
+      <span>Lab Activity 2</span>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
