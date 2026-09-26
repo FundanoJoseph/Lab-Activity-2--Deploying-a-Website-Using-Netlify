@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Python Tutorial · PyWorkshop</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/mark.svg" alt="">
+        PyWorkshop
+      </a>
+      <button class="menu-btn" id="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="learn.html" aria-current="page">Tutorial</a></li>
+        <li><a href="playground.html">Compiler</a></li>
+        <li><a href="deploy.html">Netlify Lab</a></li>
+        <li><a class="nav-cta" href="playground.html">Run Python</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap learn-layout">
+    <aside class="toc">
+      <h2>Lessons</h2>
+      <a href="#hello">1. Hello, World</a>
+      <a href="#variables">2. Variables</a>
+      <a href="#types">3. Data types</a>
+      <a href="#io">4. Input &amp; output</a>
+      <a href="#decisions">5. Decisions</a>
+      <a href="#loops">6. Loops</a>
+      <a href="#lists">7. Lists</a>
+      <a href="#functions">8. Functions</a>
+      <a href="#quiz">Quiz</a>
+    </aside>
+
+    <div>
+      <article class="lesson" id="hello">
+        <p class="num">Lesson 01</p>
+        <h2>Hello, World</h2>
+        <p>Python is a beginner-friendly language used in web apps, data, and automation. Your first program prints text to the screen.</p>
+        <pre class="code" id="code-hello"><button class="copy" data-copy="#code-hello">Copy</button>print("Hello, World!")
+print("Welcome to PyWorkshop.")</pre>
+        <p>Each <code>print()</code> call writes one line. Try it in the <a href="playground.html">compiler</a>.</p>
+      </article>
+
+      <article class="lesson" id="variables">
+        <p class="num">Lesson 02</p>
+        <h2>Variables</h2>
+        <p>A variable is a labeled box that holds a value. In Python you do not declare a type — you just assign.</p>
+        <pre class="code" id="code-var"><button class="copy" data-copy="#code-var">Copy</button>name = "Joseph"
+age = 20
+gpa = 1.75
+is_student = True
+
+print(name, age, gpa, is_student)</pre>
+      </article>
+
+      <article class="lesson" id="types">
+        <p class="num">Lesson 03</p>
+        <h2>Data types</h2>
+        <div class="chip-row">
+          <span class="chip">str</span>
+          <span class="chip">int</span>
+          <span class="chip">float</span>
+          <span class="chip">bool</span>
+        </div>
+        <p>Use <code>type()</code> to inspect a value, and <code>int()</code>, <code>str()</code>, or <code>float()</code> to convert.</p>
+        <pre class="code" id="code-types"><button class="copy" data-copy="#code-types">Copy</button>value = "42"
+print(type(value))
+number = int(value)
+print(number + 8)</pre>
+      </article>
+
+      <article class="lesson" id="io">
+        <p class="num">Lesson 04</p>
+        <h2>Input and output</h2>
+        <p><code>input()</code> reads text from the user. Convert it if you need a number.</p>
+        <pre class="code" id="code-io"><button class="copy" data-copy="#code-io">Copy</button>name = input("What is your name? ")
+print("Nice to meet you,", name)</pre>
+        <p>In the online compiler, the input box appears when the program calls <code>input()</code>.</p>
+      </article>
+
+      <article class="lesson" id="decisions">
+        <p class="num">Lesson 05</p>
+        <h2>Decisions</h2>
+        <p>Use <code>if</code>, <code>elif</code>, and <code>else</code> to choose a path. Indentation (4 spaces) is part of the syntax.</p>
+        <pre class="code" id="code-if"><button class="copy" data-copy="#code-if">Copy</button>score = 88
+
+if score >= 90:
+    print("Excellent")
+elif score >= 75:
+    print("Good job")
+else:
+    print("Keep practicing")</pre>
+      </article>
+
+      <article class="lesson" id="loops">
+        <p class="num">Lesson 06</p>
+        <h2>Loops</h2>
+        <p><code>for</code> repeats over a sequence. <code>while</code> repeats until a condition is false.</p>
+        <pre class="code" id="code-loop"><button class="copy" data-copy="#code-loop">Copy</button>for n in range(1, 6):
+    print("Count:", n)
+
+total = 0
+i = 1
+while i <= 5:
+    total += i
+    i += 1
+print("Sum:", total)</pre>
+      </article>
+
+      <article class="lesson" id="lists">
+        <p class="num">Lesson 07</p>
+        <h2>Lists</h2>
+        <p>A list stores an ordered collection. Index from 0. <code>append()</code> adds an item at the end.</p>
+        <pre class="code" id="code-list"><button class="copy" data-copy="#code-list">Copy</button>langs = ["Python", "HTML", "CSS"]
+langs.append("JavaScript")
+
+for lang in langs:
+    print("I am learning", lang)</pre>
+      </article>
+
+      <article class="lesson" id="functions">
+        <p class="num">Lesson 08</p>
+        <h2>Functions</h2>
+        <p>Functions package reusable work. <code>def</code> names the function; <code>return</code> sends a value back.</p>
+        <pre class="code" id="code-fn"><button class="copy" data-copy="#code-fn">Copy</button>def greet(name):
+    return f"Hello, {name}! Ready to code?"
+
+print(greet("Joseph"))
+print(greet("classmate"))</pre>
+        <p><a class="btn btn-amber" href="playground.html">Try these in the compiler</a></p>
+      </article>
+
+      <article class="lesson" id="quiz">
+        <p class="num">Check</p>
+        <h2>Five-question quiz</h2>
+        <p>If the Flask backend is running, it scores this. On Netlify, the browser scores it instead.</p>
+        <p class="backend-pill" id="backend-status">Checking Python backend…</p>
+        <form class="quiz" id="quiz-form">
+          <div class="q">
+            <p><strong>1.</strong> Which line prints text in Python?</p>
+            <label><input type="radio" name="q1" value="a" required> echo("Hello")</label>
+            <label><input type="radio" name="q1" value="b"> print("Hello")</label>
+            <label><input type="radio" name="q1" value="c"> console.log("Hello")</label>
+          </div>
+          <div class="q">
+            <p><strong>2.</strong> What does <code>int("7")</code> return?</p>
+            <label><input type="radio" name="q2" value="a" required> The integer 7</label>
+            <label><input type="radio" name="q2" value="b"> The string "int7"</label>
+            <label><input type="radio" name="q2" value="c"> An error always</label>
+          </div>
+          <div class="q">
+            <p><strong>3.</strong> Which keyword starts a reusable block of code?</p>
+            <label><input type="radio" name="q3" value="a" required> func</label>
+            <label><input type="radio" name="q3" value="b"> function</label>
+            <label><input type="radio" name="q3" value="c"> def</label>
+          </div>
+          <div class="q">
+            <p><strong>4.</strong> How do you add an item to a list?</p>
+            <label><input type="radio" name="q4" value="a" required> langs.add("Go")</label>
+            <label><input type="radio" name="q4" value="b"> langs.append("Go")</label>
+            <label><input type="radio" name="q4" value="c"> langs.push("Go")</label>
+          </div>
+          <div class="q">
+            <p><strong>5.</strong> Python uses indentation to…</p>
+            <label><input type="radio" name="q5" value="a" required> group code under if / for / def</label>
+            <label><input type="radio" name="q5" value="b"> comment out a line</label>
+            <label><input type="radio" name="q5" value="c"> import a library</label>
+          </div>
+          <button class="btn btn-primary" type="submit">Check answers</button>
+          <div class="banner" id="quiz-result" role="status"></div>
+        </form>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>PyWorkshop tutorial</span>
+      <a href="playground.html">Open compiler →</a>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>

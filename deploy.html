@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deploy on Netlify · PyWorkshop</title>
+  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=Figtree:wght@400;600;700&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav">
+      <a class="brand" href="index.html">
+        <img src="assets/mark.svg" alt="">
+        PyWorkshop
+      </a>
+      <button class="menu-btn" id="menu-toggle" aria-expanded="false" aria-controls="nav-links">Menu</button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="learn.html">Tutorial</a></li>
+        <li><a href="playground.html">Compiler</a></li>
+        <li><a href="deploy.html" aria-current="page">Netlify Lab</a></li>
+        <li><a class="nav-cta" href="playground.html">Run Python</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="wrap section">
+    <p class="eyebrow">Lab Activity 2</p>
+    <h1>Deploy this site on Netlify</h1>
+    <p class="lede">Netlify hosts the HTML frontend. The Flask backend is optional and only runs on your computer. Follow these steps after the repo is on GitHub.</p>
+
+    <div class="steps">
+      <article class="step"><span>1</span><div><h3>Create a Netlify account</h3><p>Go to <a href="https://app.netlify.com/" target="_blank" rel="noopener">app.netlify.com</a> and sign up. Signing in with GitHub is the fastest path.</p></div></article>
+      <article class="step"><span>2</span><div><h3>Log in</h3><p>After login you land on the team overview. Click <strong>Add a new project</strong> (or Add new site).</p></div></article>
+      <article class="step"><span>3</span><div><h3>Import from GitHub</h3><p>Choose <strong>Import an existing project</strong>, then click <strong>GitHub</strong>. Authorize Netlify if GitHub asks.</p></div></article>
+      <article class="step"><span>4</span><div><h3>Select this repo</h3><p>Pick <code>Lab-Activity-2--Deploying-a-Website-Using-Netlify</code>. If you are deploying from the session branch, select <code>arena/01a0dcd5-lab-activity-2-deploying-a-web</code>.</p></div></article>
+      <article class="step"><span>5</span><div><h3>Configure the build</h3><p>Publish directory: <code>.</code> (site root). Build command: leave empty, or keep the echo command in <code>netlify.toml</code>. Then click <strong>Deploy site</strong>.</p></div></article>
+      <article class="step"><span>6</span><div><h3>Wait for the build</h3><p>Netlify copies the HTML, CSS, and JS. There is no Node build. It usually finishes in under a minute.</p></div></article>
+      <article class="step"><span>7</span><div><h3>Open the live URL</h3><p>On the site overview, copy the generated URL. Rename the site under Site configuration → Change site name if you want something like <code>pyworkshop-fundano</code>.</p></div></article>
+    </div>
+
+    <section class="section split">
+      <div class="panel">
+        <h2>Settings that matter</h2>
+        <p><strong>Publish directory:</strong> <code>.</code></p>
+        <p><strong>Build command:</strong> none required</p>
+        <p><strong>Python / Flask:</strong> not used on Netlify. The quiz still works in the browser.</p>
+      </div>
+      <div class="panel night-panel">
+        <h2>Why this works on Netlify</h2>
+        <p>Netlify is built for static files and Git deploys. This tutorial is already static HTML, so linking the GitHub repo is enough. The embedded compiler loads from OneCompiler inside an iframe.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>Docs: netlify.com · GitHub permissions for Netlify</span>
+      <a href="https://docs.netlify.com/configure-builds/repo-permissions-linking/" target="_blank" rel="noopener">Repo permissions</a>
+    </div>
+  </footer>
+  <script src="js/app.js"></script>
+</body>
+</html>
